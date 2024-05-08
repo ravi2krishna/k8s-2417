@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecomm-dev-service
+  namespace: ecomm-dev-ns
+spec:
+  type: NodePort
+  selector:
+    tier: ecomm
+  ports:
+    - port: 80
+      targetPort: 80
+

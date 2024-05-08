@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecomm
+  namespace: ecomm-dev-ns
+  labels:
+    tier: ecomm
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      tier: ecomm
+  template:
+    metadata:
+      labels:
+        tier: ecomm
+    spec:
+      containers:
+      - name: ecomm-container
+        image: ravi2krishna/ecomm:dev
+        ports:
+        - containerPort: 80
+
